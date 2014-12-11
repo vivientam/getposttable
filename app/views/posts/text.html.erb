@@ -1,0 +1,11 @@
+<h1>A list of comments should be here:</h1>
+
+
+<% @comments.each do |comment| %>
+	<div>
+		<%= comment.id %>
+		<%= comment.title %>
+		<%= comment.comments %>
+		<%= comment.created_at %>
+	</div>
+<% end %>

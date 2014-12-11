@@ -1,0 +1,11 @@
+<h1>A list of votes should be here:</h1>
+
+
+<% @votes.each do |vote| %>
+	<div>
+		<%= vote.id %>
+		<%= vote.name %>
+		<%= vote.vote %>
+		<%= vote.created_at %>
+	</div>
+<% end %>

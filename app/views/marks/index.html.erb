@@ -1,0 +1,11 @@
+<h1>A list of marks should be here:</h1>
+
+
+<% @marks.each do |mark| %>
+	<div>
+		<%= mark.id %>
+		<%= mark.student %>
+		<%= mark.mark %>
+		<%= mark.created_at %>
+	</div>
+<% end %>
