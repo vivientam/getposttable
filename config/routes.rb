@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   get '/reddits' => 'reddits#index'
   get '/reddits' => 'reddits#new'
 
+  # give the post :id, user the PostVote Controller to create a post
+  # this is a 'post request', it's different from a 'get request'
+  post 'post_votes/:id', to: 'post_votes#create'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

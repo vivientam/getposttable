@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 
     # a user has many comments
     has_many :comments
+
+    has_many :post_votes
 end

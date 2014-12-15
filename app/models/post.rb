@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
 	has_many :comments
 
+	has_many :post_votes
+
 	# regex = regular expression
 	URL_REGEX = /https?:\/\/[\S]+/
 
