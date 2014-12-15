@@ -1,0 +1,30 @@
+// Place all the styles related to the reddits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#head {
+	font-family: "SignPainter", sans-serif;
+	font-size: 100px;
+}
+.title {
+	text-align: center;
+	font-size: 40px;
+	font-family: "SignPainter", sans-serif;
+}
+
+.comment {
+	text-align: center;
+	font-size: 40px;
+	font-family: "SignPainter", sans-serif;
+}
+
+.commentBox {
+	width: 500px;
+	height: 200px;
+	padding: 10px 10px 10px 10px;
+}
+
+.submit {
+	font-size: 40px;
+	font-family: "SignPainter", sans-serif;
+	margin-top: 200px;
+}

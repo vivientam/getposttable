@@ -1,0 +1,28 @@
+<h1>A list of comments should be here:</h1>
+
+<table class="table table-condensed">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Comments</th>
+		<th>Time</th>
+		<th>Link</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @reddits.each do |reddit| %>
+		<div>
+			<tr>
+			<td class="active"><%= reddit.id %></td>
+			<td class="success"><%= reddit.title %></td>
+			<td class="warning"><%= reddit.comment %></td>
+			<td class="danger"><%= reddit.created_at.to_date %></td>
+			<td><%= link_to "Link to this reddit", reddit %></td>
+			</tr>
+		</div>
+	</tbody>
+
+<% end %>
+<%= link_to "New reddit", new_reddit_path %>

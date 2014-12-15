@@ -11,8 +11,10 @@ class CreatePosts < ActiveRecord::Migration
     	#title = "Batman is Hihi"
     	t.string :title
     	t.string :url
+      t.integer :user_id
 
       t.timestamps
     end
   end
 end
+

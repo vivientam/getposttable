@@ -2,6 +2,9 @@
 </h1>
 
 <%= form_for @post do |f| %>
+
+	<%= flash[:message] %>
+	
 	<div>
 		<%= f.label :title %>
 		<%= f.text_field :title %>

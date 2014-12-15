@@ -1,14 +1,46 @@
 <h1>A list of posts should be here:</h1>
 
+<table class="table table-condensed">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Owner</th>
+		<th>Title</th>
+		<th>URL</th>
+		<th>Time</th>
+		<th>Link</th>
+	</thead>
 
-<% @posts.each do |post| %>
-	<div>
-		<%= post.id %>
-		<%= post.title %>
-		<%= post.url %>
-		<%= post.created_at %>
-		<%= link_to "Link to this post", post %>
-	</div>
+	<tbody>
+	<% @posts.each do |post| %>
+		<div>
+			<tr>
+			<td class="active"><%= post.id %></td>
+			<td class="warning"><%= post.user.email %></td>
+			<td class="success"><%= post.title %></td>
+			<td class="warning"><%= post.url %></td>
+			<td class="danger"><%= post.created_at.to_date %></td>
+			<td><%= link_to "Link to this post", post %></td>
+			</tr>
+		</div>
+	</tbody>
+
 <% end %>
-
 <%= link_to "New post", new_post_path %>
+
+
+<!-- On rows -->
+<!-- <tr class="active">...</tr>
+<tr class="success">...</tr>
+<tr class="warning">...</tr>
+<tr class="danger">...</tr>
+<tr class="info">...</tr>
+
+On cells (`td` or `th`)
+<tr>
+  <td class="active">...</td>
+  <td class="success">...</td>
+  <td class="warning">...</td>
+  <td class="danger">...</td>
+  <td class="info">...</td>
+</tr> -->

@@ -11,16 +11,25 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		post = Post.new(post_params)
+		post = current_user.posts.new(post_params)
+		# this goes to the model and check all the validations before it gets saved 
+		# if validation passes, then it saves, and it returns true
+		# otherwise, it returns false
 		if post.save
 			redirect_to posts_path
+			else
+			# if the record doesnt save because it didnt pass the validations
+			flash[:message] = post.errors.messages
+			
+			redirect_to :back
 		end
-	end	
+	end			
 	# this only show one post
 	def show
 		# params [:id] will look for the id in the url
 		# this basically retrieve the post with a specific id
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 
 	# this is only for internal use.
@@ -30,6 +39,8 @@ class PostsController < ApplicationController
 				permit(:title, :url)
 		end
 end
+
+
 
 
 

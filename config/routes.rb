@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -22,8 +23,12 @@ Rails.application.routes.draw do
   resources :votes
 
   get '/votes' => 'votes#index'
-
   get 'votes/new' => 'votes#new'
+
+  resources :reddits
+
+  get '/reddits' => 'reddits#index'
+  get '/reddits' => 'reddits#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
