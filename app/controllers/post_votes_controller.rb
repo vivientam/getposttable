@@ -8,6 +8,8 @@ class PostVotesController < ApplicationController
 		new_vote = PostVote.new(:user => current_user, :post => post)
 		# new_vote = PostVote.new(:user_id => current_user.id, :post_id => post.id)
 
+		#new_vote = current_user.post_votes.new(:post => post)
+
 		if new_vote.save
 			# this single line already did the view for us
 			render json: new_vote, status: 201

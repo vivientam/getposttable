@@ -3,9 +3,16 @@
 <h1>Email:<%= @post.user.email %></h1>
 <h1>Date:<%= @post.created_at %></h1>
 
-<h2><%= "Number of votes for this post: #{@post.post_votes.count}"%></h2>
+<!-- <h2><%= "Number of votes for this post: #{@post.post_votes.count}"%></h2> -->
 
-<%= link_to("Thumbs up", "/post_votes/#{@post.id}", :method => :post, :class => "", :id => "")%>
+<h1>
+	Number of votes for this post:
+	<span id="vote_count">
+		<%= @post.post_votes.count %>
+	</span>
+</h1>
+
+<%= link_to("ADD A VOTE", "#", :class => "btn_vote", 'data-id' => "#{@post.id}")%>
 
 
  <%= form_for @comment do |f| %>
